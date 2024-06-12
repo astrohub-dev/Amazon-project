@@ -1,48 +1,4 @@
-/*{
-    image: 
-    name: 
-    ratings: {
-        stars: 
-        count: 
-    },
-    price: 
-} */
-
-const products = [{
-        image: "images/products/athletic-cotton-socks-6-pairs.jpg",
-        name: "Black and Gray Athletic Cotton Socks - 6 Pairs",
-        ratings: {
-            stars: "images/ratings/rating-45.png",
-            count: 87
-        },
-        price: 10.90
-    }, {
-        image: "images/products/intermediate-composite-basketball.jpg",
-        name: "Intermediate Size Basketball",
-        ratings: {
-            stars: "images/ratings/rating-40.png",
-            count: 127
-        },
-        price: 20.95
-    }, {
-        image: "images/products/adults-plain-cotton-tshirt-2-pack-teal.jpg",
-        name: "Adults Plain Cotton T-Shirt - 2 Pack",
-        ratings: {
-            stars: "images/ratings/rating-45.png",
-            count: 56
-        },
-        price: 7.99
-    }, {
-        image: "images/products/black-2-slot-toaster.jpg",
-        name: "2 Slot Toaster - Black",
-        ratings: {
-            stars: "images/ratings/rating-50.png",
-            count: 2197
-        },
-        price: 18.99
-    }];
-
-    let productsHTML = '';
+ let productsHTML = '';
     for(let i = 0; i < products.length; i++) {
         const product = products[i];
         //products === the array name,
@@ -60,14 +16,14 @@ const products = [{
 
             <div class="product-rating-container">
                 <img class="product-rating-stars"
-                src="${product.ratings.stars}">
+                src="images/ratings/rating-${product.rating.stars * 10}.png">
                 <div class="product-rating-count link-primary">
-                ${product.ratings.count}
+                ${product.rating.count}
                 </div>
             </div>
 
             <div class="product-price">
-                $${(product.price).toFixed(2)}
+                $${(product.priceCents / 100).toFixed(2)}
             </div>
 
             <div class="product-quantity-container">
