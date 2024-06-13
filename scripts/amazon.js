@@ -58,6 +58,7 @@
 
 document.getElementById('mycontainer').innerHTML = productsHTML;
 
+const cart = [];
 document.querySelectorAll('#myAddToCart').forEach((button) => {
     button.onclick = function () {
       const productId = button.dataset.productId;
