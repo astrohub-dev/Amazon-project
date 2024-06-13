@@ -1,13 +1,3 @@
-/*{
-    image: 
-    name: 
-    ratings: {
-        stars: 
-        count: 
-    },
-    price: 
-} */
-
 const products = [
   {
     id: "e43638ce-6aa0-4b85-b27f-e1d07eb678c6",
@@ -666,5 +656,39 @@ const products = [
       "apparel",
       "mens"
     ]
-  }
-];
+  }, {
+    image: "images/products/iphone-15-promax.jpg",
+    name: "iPhone 15 ProMax",
+    rating: {
+        stars: 5,
+        count: 899
+    },
+    priceCents: 147700
+}, {
+  image: "images/products/macbook.jpg",
+  name: "Apple’s 14-Inch 2023 MacBook Pro With M2 chip",
+  rating: {
+      stars: 5,
+      count: 1360
+  },
+  priceCents: 269900
+}, {
+  image: "images/products/ps5console.jpg",
+  name: "Play Station 5 console",
+  rating: {
+      stars: 5,
+      count: 12864
+  },
+  priceCents: 143000
+}];
+
+/*{
+    image: 
+    name: 
+    rating: {
+        stars: 
+        count: 
+    },
+    priceCents: 
+} */
+
