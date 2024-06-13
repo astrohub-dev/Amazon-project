@@ -642,7 +642,7 @@ const products = [
     ]
   },
   {
-    id: "bc2847e9-5323-403f-b7cf-57fde044a955",
+    id: "bc2847e9-5323-403f-b7cf-57fde044x955",
     image: "images/products/men-cozy-fleece-zip-up-hoodie-red.jpg",
     name: "Men's Full-Zip Hooded Fleece Sweatshirt",
     rating: {
@@ -657,6 +657,7 @@ const products = [
       "mens"
     ]
   }, {
+    id: "qe2040e9-5023-803f-a7cf-77fdp055t925",
     image: "images/products/iphone-15-promax.jpg",
     name: "iPhone 15 ProMax",
     rating: {
@@ -665,6 +666,7 @@ const products = [
     },
     priceCents: 147700
 }, {
+  id: "pl2840d9-8043-903v-k7cp-17ldp095y715",
   image: "images/products/macbook.jpg",
   name: "Apple’s 14-Inch 2023 MacBook Pro With M2 chip",
   rating: {
@@ -673,6 +675,7 @@ const products = [
   },
   priceCents: 269900
 }, {
+  id: "gb3340p2-3249-556e-p7dk-90lup043a488",
   image: "images/products/ps5console.jpg",
   name: "Play Station 5 console",
   rating: {

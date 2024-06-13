@@ -2,7 +2,7 @@
     for(let i = 0; i < products.length; i++) {
         const product = products[i];
         //products === the array name,
-        //product === array element which is the object.
+        //product === array element which is an object.
         productsHTML += `
             <div class="product-container">
             <div class="product-image-container">
@@ -48,7 +48,8 @@
                 Added
             </div>
 
-            <button class="add-to-cart-button button-primary">
+            <button class="add-to-cart-button button-primary" id="myAddToCart" 
+            data-product-id="${product.id}">
                 Add to Cart
             </button>
             </div>
@@ -56,3 +57,28 @@
     }
 
 document.getElementById('mycontainer').innerHTML = productsHTML;
+
+document.querySelectorAll('#myAddToCart').forEach((button) => {
+    button.onclick = function () {
+      const productId = button.dataset.productId;
+
+      let matchingItem;
+      cart.forEach((item) => {
+            if(productId === item.productId) {
+                matchingItem = item;
+            }
+        });
+
+            if(matchingItem) {
+                matchingItem.quantity++;
+            }
+
+            else {
+                cart.push({
+                productId: productId,
+                quantity: 1
+                });
+            }
+            console.log(cart);
+    }
+}); 
