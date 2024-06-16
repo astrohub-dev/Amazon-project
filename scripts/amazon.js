@@ -1,3 +1,6 @@
+import {cart} from '../data/cart.js';
+import { products} from '../data/products.js';
+ 
  let productsHTML = '';
     for(let i = 0; i < products.length; i++) {
         const product = products[i];
@@ -58,7 +61,7 @@
 
 document.getElementById('mycontainer').innerHTML = productsHTML;
 
-const cart = [];
+//const cart = [];
 document.querySelectorAll('#myAddToCart').forEach((button) => {
     button.onclick = function () {
       const productId = button.dataset.productId;
