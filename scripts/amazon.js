@@ -43,7 +43,7 @@
 
             <div class="product-spacer"></div>
 
-            <div class="added-to-cart">
+            <div class="added-to-cart" id="added-${product.id}">
                 <img src="images/icons/checkmark.png">
                 Added
             </div>
@@ -87,5 +87,12 @@ document.querySelectorAll('#myAddToCart').forEach((button) => {
             cartQuantity += item.quantity;
         })
         document.getElementById('mycartQ').innerHTML = cartQuantity;
+
+        const added = document.getElementById(`added-${productId}`);
+        added.classList.add('display-added');
+
+        setTimeout(() => {
+            added.classList.remove('display-added');
+        }, 2000);
     }
 }); 
