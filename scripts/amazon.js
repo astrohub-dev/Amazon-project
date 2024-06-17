@@ -1,5 +1,5 @@
 import {cart, addToCart} from '../data/cart.js';
-import { products} from '../data/products.js';
+import {products} from '../data/products.js';
  
  let productsHTML = '';
     for(let i = 0; i < products.length; i++) {

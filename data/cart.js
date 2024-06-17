@@ -20,4 +20,5 @@ export function addToCart(productId) {
             quantity: Number(selected)
             });
         }
+        document.querySelector(`.select-${productId}`).value = '1';
 }
