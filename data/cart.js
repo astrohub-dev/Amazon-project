@@ -30,12 +30,6 @@ export function addToCart(productId) {
         document.querySelector(`.select-${productId}`).value = '1';
 }
 
-/*export function removefromCart(productId) {
-    cart.splice(item, 1);
-    console.log(cart);
-} */
-
-
 export function removefromCart(productId) {
     let newCart = [];
     cart.forEach((item) => {
