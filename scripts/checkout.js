@@ -96,8 +96,20 @@ document.querySelectorAll('#myLink').forEach((link) => {
   link.onclick = function () {
     const {productId} = link.dataset;
     removefromCart(productId);
+    updateCartQuantity();
 
     const container = document.getElementById(`container-${productId}`);
     container.remove();
   }
 })
+
+const text = document.getElementById('myCheck');
+function updateCartQuantity() {
+  let cartQuantity = 0;
+   cart.forEach((item) => {
+      cartQuantity += item.quantity;
+     });
+text.innerHTML  = `${cartQuantity} items`;
+    }
+
+    updateCartQuantity();

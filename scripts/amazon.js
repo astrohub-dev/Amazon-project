@@ -90,3 +90,5 @@ document.querySelectorAll('#myAddToCart').forEach((button) => {
      addedMessage(productId);
     }
 }); 
+
+updateCartQuantity();

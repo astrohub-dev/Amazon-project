@@ -10,7 +10,7 @@ export let cart = JSON.parse(localStorage.getItem('myCart'));
     }];
 } */
 
-function saveToStorage() {
+export function saveToStorage() {
 localStorage.setItem('myCart', JSON.stringify(cart));
 }
 
