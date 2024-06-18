@@ -1,8 +1,6 @@
 import {cart, removefromCart} from '../data/cart.js';
 import {products} from '../data/products.js';
 
-//console.log(JSON.parse(localStorage.getItem('myCart')));
-
 let checkoutHTML = '';
 cart.forEach((cartItem) => {
     const productId = cartItem.productId;
