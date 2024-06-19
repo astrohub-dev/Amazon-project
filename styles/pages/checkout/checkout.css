@@ -209,3 +209,23 @@
   margin-top: 11px;
   margin-bottom: 15px;
 }
+
+.myUpdate{
+  display: none;
+}
+
+.saveQ{
+  display: none;
+}
+
+.is-editing-quantity .displayQ{
+  display: initial;
+}
+
+.is-editing-quantity .theQuantity{
+  display: none;
+}
+
+.is-editing-quantity .theButton{
+  display: none;
+}
