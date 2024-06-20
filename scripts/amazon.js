@@ -5,7 +5,7 @@ import {products} from '../data/products.js';
     for(let i = 0; i < products.length; i++) {
         const product = products[i];
         //products === the array name,
-        //product === array element which is an object.
+        //product === array element which is an object. 
         productsHTML += `
             <div class="product-container">
             <div class="product-image-container">
