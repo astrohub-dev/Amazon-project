@@ -1,5 +1,13 @@
 import {cart, removefromCart, updateQuantity} from '../data/cart.js';
 import {products} from '../data/products.js';
+import { updateItems, displayCash } from './orderSummary.js';
+import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js';
+
+//study dayjs documentation
+//also research javascript external libraries
+const date = dayjs();
+const deliveryDate = date.add(7, 'day');
+console.log(deliveryDate.format('dddd, MMMM D'));
 
 let checkoutHTML = '';
 cart.forEach((cartItem) => {
@@ -110,6 +118,8 @@ document.querySelectorAll('#myLink').forEach((link) => {
     const {productId} = link.dataset;
     removefromCart(productId);
     updateCartQuantity();
+    updateItems();
+    displayCash();
 
     const container = document.getElementById(`container-${productId}`);
     container.remove();
@@ -146,6 +156,8 @@ text.innerHTML  = `${cartQuantity} items`;
         document.getElementById(`theQuantity-${productId}`).innerHTML = newQuantity;
 
         updateCartQuantity();
+        updateItems();
+        displayCash();
       }
     });
 
