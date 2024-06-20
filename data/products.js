@@ -664,7 +664,13 @@ export const products = [
         stars: 5,
         count: 899
     },
-    priceCents: 147700
+    priceCents: 147700,
+    keywords: [
+      "iPhone",
+      "apple",
+      "macBook",
+      "phone"
+    ]
 }, {
   id: "pl2840d9-8043-903v-k7cp-17ldp095y715",
   image: "images/products/macbook.jpg",
@@ -673,7 +679,15 @@ export const products = [
       stars: 5,
       count: 1360
   },
-  priceCents: 269900
+  priceCents: 269900,
+  keywords: [
+    "iPhone",
+    "apple",
+    "macBook",
+    "phone",
+    "laptop",
+    "computer"
+  ]
 }, {
   id: "gb3340p2-3249-556e-p7dk-90lup043a488",
   image: "images/products/ps5console.jpg",
@@ -682,7 +696,13 @@ export const products = [
       stars: 5,
       count: 12864
   },
-  priceCents: 143000
+  priceCents: 143000,
+  keywords: [
+    "play station",
+    "ps5",
+    "console",
+    "video game"
+  ]
 }];
 
 /*{
