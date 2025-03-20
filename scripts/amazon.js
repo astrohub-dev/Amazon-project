@@ -7,7 +7,7 @@ import {products} from '../data/products.js';
         //products === the array name,
         //product === array element which is an object. 
         productsHTML += `
-            <div class="product-container">
+            <div class="product-container"> 
             <div class="product-image-container">
                 <img class="product-image"
                 src="${product.image}">
