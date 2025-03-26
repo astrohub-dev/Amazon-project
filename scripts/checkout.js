@@ -8,7 +8,7 @@ import { deliveryOptions } from '../data/deliveryOptions.js';
 function displayDate(addDay) {
   const date = dayjs();
   const increaseDate = date.add(addDay, 'day');
-  const deliveryDate = increaseDate.format('dddd, MMMM D, YYYY');
+  const deliveryDate = increaseDate.format('dddd, MMMM, YYYY');
   
   return deliveryDate;
 }

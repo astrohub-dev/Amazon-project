@@ -2,8 +2,7 @@ import {cart, addToCart} from '../data/cart.js';
 import {products} from '../data/products.js';
  
  let productsHTML = '';
-    for(let i = 0; i < products.length; i++) {
-        const product = products[i];
+    products.forEach((product) => {
         //products === the array name,
         //product === array element which is an object. 
         productsHTML += `
@@ -57,7 +56,7 @@ import {products} from '../data/products.js';
             </button>
             </div>
         `
-    }
+    });
 
 document.getElementById('mycontainer').innerHTML = productsHTML;
 
