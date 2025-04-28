@@ -1,93 +1,97 @@
 import {cart, addToCart} from '../data/cart.js';
-import {products} from '../data/products.js';
- 
- let productsHTML = '';
-    products.forEach((product) => {
-        //products === the array name,
-        //product === array element which is an object. 
-        productsHTML += `
-            <div class="product-container"> 
-            <div class="product-image-container">
-                <img class="product-image"
-                src="${product.image}">
-            </div>
+import {products, loadProducts} from '../data/products.js';
 
-            <div class="product-name limit-text-to-2-lines">
-                ${product.name}
-            </div>
+loadProducts(renderProductsGrid);
 
-            <div class="product-rating-container">
-                <img class="product-rating-stars"
-                src="images/ratings/rating-${product.rating.stars * 10}.png">
-                <div class="product-rating-count link-primary">
-                ${product.rating.count}
+function renderProductsGrid() {
+    let productsHTML = '';
+        products.forEach((product) => {
+            //products === the array name,
+            //product === array element which is an object. 
+            productsHTML += `
+                <div class="product-container"> 
+                <div class="product-image-container">
+                    <img class="product-image"
+                    src="${product.image}">
                 </div>
-            </div>
 
-            <div class="product-price">
-                $${(product.priceCents / 100).toFixed(2)}
-            </div>
+                <div class="product-name limit-text-to-2-lines">
+                    ${product.name}
+                </div>
 
-            <div class="product-quantity-container">
-                <select class="select-${product.id}">
-                <option selected value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
-                </select>
-            </div>
+                <div class="product-rating-container">
+                    <img class="product-rating-stars"
+                    src="images/ratings/rating-${product.rating.stars * 10}.png">
+                    <div class="product-rating-count link-primary">
+                    ${product.rating.count}
+                    </div>
+                </div>
 
-            <div class="product-spacer"></div>
+                <div class="product-price">
+                    $${(product.priceCents / 100).toFixed(2)}
+                </div>
 
-            <div class="added-to-cart" id="added-${product.id}">
-                <img src="images/icons/checkmark.png">
-                Added
-            </div>
+                <div class="product-quantity-container">
+                    <select class="select-${product.id}">
+                    <option selected value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    </select>
+                </div>
 
-            <button class="add-to-cart-button button-primary" id="myAddToCart" 
-            data-product-id="${product.id}">
-                Add to Cart
-            </button>
-            </div>
-        `
-    });
+                <div class="product-spacer"></div>
 
-document.getElementById('mycontainer').innerHTML = productsHTML;
+                <div class="added-to-cart" id="added-${product.id}">
+                    <img src="images/icons/checkmark.png">
+                    Added
+                </div>
 
-function updateCartQuantity() {
-        let cartQuantity = 0;
-            cart.forEach((item) => {
-                cartQuantity += item.quantity;
-            })
-            document.getElementById('mycartQ').innerHTML = cartQuantity;
+                <button class="add-to-cart-button button-primary" id="myAddToCart" 
+                data-product-id="${product.id}">
+                    Add to Cart
+                </button>
+                </div>
+            `
+        });
 
-}
+    document.getElementById('mycontainer').innerHTML = productsHTML;
 
-function addedMessage(productId) {
-    const added = document.getElementById(`added-${productId}`);
-        added.classList.add('display-added');
+    function updateCartQuantity() {
+            let cartQuantity = 0;
+                cart.forEach((item) => {
+                    cartQuantity += item.quantity;
+                })
+                document.getElementById('mycartQ').innerHTML = cartQuantity;
 
-        setTimeout(() => {
-            added.classList.remove('display-added');
-        }, 2000);
-}
-
-document.querySelectorAll('#myAddToCart').forEach((button) => {
-    button.onclick = function () {
-      const productId = button.dataset.productId;
-
-     addToCart(productId);
-
-     updateCartQuantity();
-        
-     addedMessage(productId);
     }
-}); 
 
-updateCartQuantity();
+    function addedMessage(productId) {
+        const added = document.getElementById(`added-${productId}`);
+            added.classList.add('display-added');
+
+            setTimeout(() => {
+                added.classList.remove('display-added');
+            }, 2000);
+    }
+
+    document.querySelectorAll('#myAddToCart').forEach((button) => {
+        button.onclick = function () {
+        const productId = button.dataset.productId;
+
+        addToCart(productId);
+
+        updateCartQuantity();
+            
+        addedMessage(productId);
+        }
+    }); 
+
+    updateCartQuantity();
+}
