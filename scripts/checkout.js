@@ -1,5 +1,5 @@
-import {cart, removefromCart, saveToStorage, updateQuantity, updateDeliveryOption} from '../data/cart.js';
-import {products} from '../data/products.js';
+import {cart, removefromCart, saveToStorage, updateQuantity, updateDeliveryOption, loadCart} from '../data/cart.js';
+import {loadProductsFetch, products} from '../data/products.js';
 import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js';
 import { deliveryOptions } from '../data/deliveryOptions.js';
 import { displayCash } from './orderSummary.js';
@@ -193,7 +193,58 @@ export function renderOrderSummary() {
 
 }
 
-loadProducts(() => {
+async function loadPage() {
+  try {
+    await loadProductsFetch();
+
+    await new Promise((resolve) => {
+      loadCart(() => {
+        resolve();
+      });
+    });  
+  } catch (error) {
+    console.log('unexpected error. Please try again later.');
+  }
+  
   renderOrderSummary();
   displayCash();
-});
+}
+loadPage();
+
+/*
+Promise.all([
+  loadProductsFetch(),
+  new Promise((resolve) => {
+    loadCart(() => {
+      resolve();
+    });
+  })
+
+]).then(() => {
+  renderOrderSummary();
+  displayCash();
+}) */
+
+/*new Promise((resolve) => {
+  loadProducts(() => {
+    resolve();
+  });
+}).then(() => {
+  return new Promise((resolve) => {
+    loadCart(() => {
+      resolve();
+    });
+  });
+}).then(() => {
+  renderOrderSummary();
+  displayCash();
+});*/
+
+/*
+loadProducts(() => {
+  loadCart(() => {
+    renderOrderSummary();
+    displayCash();
+  });
+}) */
+  
